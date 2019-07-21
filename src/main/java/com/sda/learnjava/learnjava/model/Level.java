@@ -1,6 +1,18 @@
 package com.sda.learnjava.learnjava.model;
 
-public enum Level {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-    BASIC, MEDIUM, HARD
-}
+@Entity
+public class Level {
+
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @OneToMany(mappedBy = "quiz")
+    private String level;
+
+}   

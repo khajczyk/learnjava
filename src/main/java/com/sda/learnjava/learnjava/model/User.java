@@ -37,11 +37,10 @@ public class User {
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
 
-    @JoinTable(name = "user_answers",
-            joinColumns = @JoinColumn(name = "useranswers_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-
     @ManyToMany
-    private List<UserAnswers> userAnswers = new ArrayList<>();
+    private List<UsersAnswers> userAnswers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    private List<UsersAnswers> usersAnswers;
 
 }

@@ -11,21 +11,23 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "USERANSWERS")
-public class UserAnswers {
-
+public class UsersAnswers {
 
     @Id
     @GeneratedValue
-    @Column(name = "useranswers_id")
+    @Column(name = "useranswer_id")
     private long id;
-
 
     private LocalDate localDate;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    private Quiz quizId;
+    @ManyToOne
+    @JoinColumn(name = "quiz_id")
+    private Quiz quiz;
+
+    private int score;
 
 }

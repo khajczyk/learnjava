@@ -10,12 +10,15 @@ public class Answer {
 
     @Id
     @GeneratedValue
+    @Column(name = "answer_id")
     private long id;
 
-    private long correctAnswer;
+    private String description;
 
-    @OneToOne(mappedBy = "answer")
-    private List<Answer> answers;
+    private boolean isTrue;
 
+    @ManyToOne
+    @JoinColumn(name = "question_id")
+    private Question question;
 
 }
