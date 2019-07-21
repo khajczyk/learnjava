@@ -14,7 +14,6 @@ public class Question {
 
     private String question;
 
-    private Level level;
 
     @OneToMany(mappedBy = "question")
     private List<Answer> answers;
@@ -22,4 +21,8 @@ public class Question {
     @ManyToOne
     @JoinColumn(name = "quiz_id")
     private Quiz quiz;
+
+    @ManyToOne
+    @JoinColumn(name = "level_id")
+    private Level level;
 }

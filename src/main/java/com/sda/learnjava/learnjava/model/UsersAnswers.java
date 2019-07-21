@@ -30,4 +30,9 @@ public class UsersAnswers {
 
     private int score;
 
+
+    @ManyToOne
+    @JoinColumn(name = "level_id")
+    private Level level;
+
 }

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.List;
+
 
 @Entity
 public class Level {
@@ -14,5 +16,17 @@ public class Level {
 
     @OneToMany(mappedBy = "quiz")
     private String level;
+
+    @OneToMany(mappedBy = "level")
+    private List<Quiz> quizzes;
+
+    @OneToMany(mappedBy = "level")
+    private List<User> users;
+
+    @OneToMany(mappedBy = "level")
+    private List<UsersAnswers> usersAnswers;
+
+    @OneToMany(mappedBy = "level")
+    private List<Question> questions;
 
 }   

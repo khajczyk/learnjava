@@ -32,7 +32,6 @@ public class User {
 
     private String email;
 
-    private Level level;
 
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
@@ -43,4 +42,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<UsersAnswers> usersAnswers;
 
+    @ManyToOne
+    @JoinColumn(name = "level_id")
+    private Level level;
 }

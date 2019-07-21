@@ -19,7 +19,6 @@ public class Quiz {
     @Column(name = "quiz_id")
     private long id;
 
-    private Level level;
 
     @OneToMany
     private Set<Question> questions = new HashSet<>();
@@ -27,5 +26,7 @@ public class Quiz {
     @OneToMany(mappedBy = "quiz")
     private List<UsersAnswers> usersAnswers;
 
-
+    @ManyToOne
+    @JoinColumn(name = "level_id")
+    private Level level;
 }
