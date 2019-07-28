@@ -25,4 +25,8 @@ public class Question {
     @ManyToOne
     @JoinColumn(name = "level_id")
     private Level level;
+
+    public Question(String question) {
+        this.question = question;
+    }
 }

@@ -21,4 +21,8 @@ public class Answer {
     @JoinColumn(name = "question_id")
     private Question question;
 
+    public Answer(String description, boolean isTrue) {
+        this.description = description;
+        this.isTrue = isTrue;
+    }
 }
