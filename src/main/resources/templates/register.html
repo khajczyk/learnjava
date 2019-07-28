@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
@@ -32,44 +32,49 @@
     </div>
 </nav>
 
+
+<form th:action="@{/register}" th:object="${registerUser}" method="post" style="...">
+
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="field-user">User name:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Fill in this field" aria-label="Username" aria-describedby="field-user">
+    <input type="text" th:field="*{nickName}" class="form-control" placeholder="Fill in this field" aria-label="Username" aria-describedby="field-user">
 </div>
 
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="field-user">First name:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Fill in this field" aria-label="First" aria-describedby="field-first">
+    <input type="text" th:field="*{firstName}" class="form-control" placeholder="Fill in this field" aria-label="First" aria-describedby="field-first">
 </div>
 
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="field-user">Last name:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Fill in this field" aria-label="Last" aria-describedby="field-last">
+    <input type="text" th:field="*{lastName}" class="form-control" placeholder="Fill in this field" aria-label="Last" aria-describedby="field-last">
 </div>
 
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="field-user">Password:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Fill in this field" aria-label="Password" aria-describedby="field-password">
+    <input type="text" th:field="*{password}" class="form-control" placeholder="Fill in this field" aria-label="Password" aria-describedby="field-password">
 </div>
 
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="field-user">Email:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Fill in this field" aria-label="Email" aria-describedby="field-email">
+    <input type="text" th:field="*{email}" class="form-control" placeholder="Fill in this field" aria-label="Email" aria-describedby="field-email">
 </div>
 
+    <button type="submit" class="btn btn-primary btn-lg">Register user</button>
+</form>
 
 <br>
-<button type="button" class="btn btn-primary btn-lg">Register user</button>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
