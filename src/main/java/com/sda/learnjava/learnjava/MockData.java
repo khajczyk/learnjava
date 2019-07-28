@@ -39,7 +39,9 @@ public class MockData {
 ​
             Role role = roleRepository.findByName(RoleType.USER.getRoleName());
             if (role == null) {
-                role = roleRepository.save(new Role(RoleType.USER.getRoleName()));
+                Role roleUser = new Role();
+                roleUser.setName(RoleType.USER.getRoleName());
+                role = roleRepository.save(roleUser);
             }
             User user = new User();
             userRepository.save(user);

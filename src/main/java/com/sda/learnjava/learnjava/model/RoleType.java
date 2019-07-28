@@ -2,7 +2,6 @@ package com.sda.learnjava.learnjava.model;
 
 import lombok.Getter;
 
-@Getter
 public enum RoleType {
 
     USER("ROLE_USER"), ADMIN("ROLE_ADMIN");
@@ -11,5 +10,9 @@ public enum RoleType {
 
     RoleType(String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getRoleName() {
+        return roleName;
     }
 }

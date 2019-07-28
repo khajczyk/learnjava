@@ -4,8 +4,10 @@ import com.sda.learnjava.learnjava.model.Role;
 import com.sda.learnjava.learnjava.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoleRepository extends JpaRepository<User, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
 
-    boolean findByName (Role role);
+    boolean existsByName(String role);
+
+    Role findByName(String name);
 
 }
