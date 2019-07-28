@@ -5,33 +5,36 @@ import com.sda.learnjava.learnjava.repositories.QuizRepository;
 import com.sda.learnjava.learnjava.repositories.RoleRepository;
 import com.sda.learnjava.learnjava.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.PostConstruct;
-import java.util.*;​
+import java.util.*;
 
 @Service
-public class MockData {​
+public class MockData {
+
     @Autowired
     private RoleRepository roleRepository;
-​
+
     @Autowired
     private UserRepository userRepository;
-​
+
     @Autowired
     private QuizRepository quizRepository;
-​
+
     @Autowired
     private PasswordEncoder passwordEncoder;
-​
 
     @PostConstruct
     public void mockData() {
-​
+
         initQuizzes();
-​
+
+
         if (!userRepository.existsByUsername("user@user.pl")) {
-​
+
             Role role = roleRepository.findByName(RoleType.USER.getRoleName());
             if (role == null) {
                 Role roleUser = new Role();
@@ -42,16 +45,15 @@ public class MockData {​
             userRepository.save(user);
             user.setNickName("user@user.pl");
             user.setPasswordHash(passwordEncoder.encode("user12345"));
-
             user.setRole(role);
             user.setFirstName("Jan");
             user.setLastName("Kowalski");
-​
             userRepository.save(user);
         }
-​
+
+
         if (!userRepository.existsByUsername("admin@admin.pl")) {
-​
+
             Role role = roleRepository.findByName(RoleType.ADMIN.getRoleName());
             if (role == null) {
                 role = roleRepository.save(new Role(RoleType.ADMIN.getRoleName()));
@@ -63,14 +65,12 @@ public class MockData {​
             user.setRole(role);
             user.setFirstName("Przemysław");
             user.setLastName("Adminowski");
-​
+
             userRepository.save(user);
         }
-​
     }
-​
 
-    public void initQuizzes() {
+    private void initQuizzes() {
         List<Quiz> all = quizRepository.findAll();
         if (all.size() == 0) {
 
