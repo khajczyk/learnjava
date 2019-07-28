@@ -32,6 +32,13 @@ public class User {
 
     private String email;
 
+    public User(String nickName, String firstName, String lastName, String password, String email) {
+        this.nickName = nickName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+    }
 
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
