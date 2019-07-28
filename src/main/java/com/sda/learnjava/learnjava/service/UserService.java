@@ -24,6 +24,6 @@ public class UserService {
     public User mapRegisterDtoToUser(RegisterUserDTO registerUserDTO){
         return new User(registerUserDTO.getNickName(), registerUserDTO.getFirstName(),
                 registerUserDTO.getLastName(),passwordEncoder.encode(registerUserDTO.getPassword()),
-                registerUserDTO.getEmail());
+                registerUserDTO.getEmail(), registerUserDTO.getRole());
     }
 }

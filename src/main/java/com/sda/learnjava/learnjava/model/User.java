@@ -34,7 +34,7 @@ public class User {
 
     private Role role;
 
-    public User(String nickName, String firstName, String lastName, String encode, String email) {
+    public User(String nickName, String firstName, String lastName, String encode, String email, Role role) {
 
     }
 

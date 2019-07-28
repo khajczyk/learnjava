@@ -1,5 +1,7 @@
 package com.sda.learnjava.learnjava.dto;
 
+import com.sda.learnjava.learnjava.model.Role;
+
 public class RegisterUserDTO {
 
     private String nickName;
@@ -7,6 +9,7 @@ public class RegisterUserDTO {
     private String lastName;
     private String password;
     private String email;
+    private Role role;
 
 
 
@@ -48,5 +51,13 @@ public class RegisterUserDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
