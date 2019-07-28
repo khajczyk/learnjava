@@ -14,6 +14,8 @@ public class Level {
     @Column
     private String level;
 
+
+
     @OneToMany(mappedBy = "level")
     private List<Quiz> quizzes;
 

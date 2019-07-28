@@ -20,6 +20,10 @@ public class Quiz {
     private long id;
 
 
+    public Quiz(Level level) {
+        this.level = level;
+    }
+
     @OneToMany
     private Set<Question> questions = new HashSet<>();
 

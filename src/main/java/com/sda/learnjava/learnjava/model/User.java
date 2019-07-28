@@ -34,17 +34,10 @@ public class User {
 
     private Role role;
 
-    public User() {
-    }
+//    public User(String nickName, String firstName, String lastName, String encode, String email) {
 //
-//    public User(String nickName, String firstName, String lastName, String password, String email, Role role) {
-//        this.nickName = nickName;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.password = password;
-//        this.email = email;
-//        this.role = role;
 //    }
+
 
     public Long getId() {
         return id;
