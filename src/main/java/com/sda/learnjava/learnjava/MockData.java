@@ -60,11 +60,11 @@ public class MockData {
             }
             User user = new User();
             userRepository.save(user);
-            user.setUsername("admin@admin.pl");
+            user.setNickName("admin@admin.pl");
             user.setPasswordHash(passwordEncoder.encode("admin12345"));
-            user.setRoles(Sets.newHashSet(role));
+            user.setRole(Sets.newHashSet(role));
             user.setFirstName("Przemysław");
-            user.setSurname("Adminowski");
+            user.setLastName("Adminowski");
 ​
             userRepository.save(user);
         }
@@ -102,6 +102,8 @@ public class MockData {
         }
     }
 }
+
+
 
 
 
