@@ -32,6 +32,8 @@ public class User {
 
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
     private Role role;
 
     public User(String nickName, String firstName, String lastName, String encode, String email, Role role) {
@@ -100,8 +102,8 @@ public class User {
         this.role = role;
     }
 
-    @ManyToMany
-    private Set<Role> roles = new HashSet<>();
+   /* @ManyToMany
+    private Set<Role> roles = new HashSet<>();*/
 
     @ManyToMany
     private List<UsersAnswers> userAnswers = new ArrayList<>();

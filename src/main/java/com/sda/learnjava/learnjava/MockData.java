@@ -33,7 +33,7 @@ public class MockData {
         initQuizzes();
 
 
-        if (!userRepository.existsByUsername("user@user.pl")) {
+        if (!userRepository.existsByNickName("user@user.pl")) {
 
             Role role = roleRepository.findByName(RoleType.USER.getRoleName());
             if (role == null) {
@@ -52,7 +52,7 @@ public class MockData {
         }
 
 
-        if (!userRepository.existsByUsername("admin@admin.pl")) {
+        if (!userRepository.existsByNickName("admin@admin.pl")) {
 
             Role role = roleRepository.findByName(RoleType.ADMIN.getRoleName());
             if (role == null) {
